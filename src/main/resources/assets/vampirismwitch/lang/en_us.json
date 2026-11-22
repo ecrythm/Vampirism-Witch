@@ -1,18 +1,1 @@
-{
-  "itemGroup.vampirismwitch": "Vampirism: Witch",
-  "item.vampirismwitch.witch_hat": "Witch Hat",
-  "faction.vampirismwitch.witch": "Witch",
-  "faction.vampirismwitch.witch.singular": "Witch",
-  "faction.vampirismwitch.witch.plural": "Witches",
-  "lord_title.vampirismwitch.witch.male.1": "Witch Lord 1",
-  "lord_title.vampirismwitch.witch.male.2": "Witch Lord 2",
-  "lord_title.vampirismwitch.witch.male.3": "Witch Lord 3",
-  "lord_title.vampirismwitch.witch.male.4": "Witch Lord 4",
-  "lord_title.vampirismwitch.witch.male.5": "Witch Lord 5",
-  "lord_title.vampirismwitch.witch.female.1": "Witch Lord 1",
-  "lord_title.vampirismwitch.witch.female.2": "Witch Lord 2",
-  "lord_title.vampirismwitch.witch.female.3": "Witch Lord 3",
-  "lord_title.vampirismwitch.witch.female.4": "Witch Lord 4",
-  "lord_title.vampirismwitch.witch.female.5": "Witch Lord 5",
-  "lord_title.vampirismwitch.witch.short": "Witch Lord"
-}
+{"itemGroup.vampirismwitch":"Vampirism: Witch","item.vampirismwitch.witch_hat":"Witch Hat","faction.vampirismwitch.witch":"Witch","faction.vampirismwitch.witch.singular":"Witch","faction.vampirismwitch.witch.plural":"Witches","gui.vampirismwitch.lord_level":"Lord Level %s"}

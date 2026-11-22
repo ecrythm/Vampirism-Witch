@@ -1,18 +1,1 @@
-{
-  "itemGroup.vampirismwitch": "Vampirism: Witch",
-  "item.vampirismwitch.witch_hat": "Ведьмовская шляпа",
-  "faction.vampirismwitch.witch": "Ведьмы",
-  "faction.vampirismwitch.witch.singular": "Ведьма",
-  "faction.vampirismwitch.witch.plural": "Ведьмы",
-  "lord_title.vampirismwitch.witch.male.1": "Лорд ведьм 1",
-  "lord_title.vampirismwitch.witch.male.2": "Лорд ведьм 2",
-  "lord_title.vampirismwitch.witch.male.3": "Лорд ведьм 3",
-  "lord_title.vampirismwitch.witch.male.4": "Лорд ведьм 4",
-  "lord_title.vampirismwitch.witch.male.5": "Лорд ведьм 5",
-  "lord_title.vampirismwitch.witch.female.1": "Лорд ведьм 1",
-  "lord_title.vampirismwitch.witch.female.2": "Лорд ведьм 2",
-  "lord_title.vampirismwitch.witch.female.3": "Лорд ведьм 3",
-  "lord_title.vampirismwitch.witch.female.4": "Лорд ведьм 4",
-  "lord_title.vampirismwitch.witch.female.5": "Лорд ведьм 5",
-  "lord_title.vampirismwitch.witch.short": "Лорд ведьм"
-}
+{"itemGroup.vampirismwitch":"Vampirism: Witch","item.vampirismwitch.witch_hat":"Ведьмовская шляпа","faction.vampirismwitch.witch":"Ведьмы","faction.vampirismwitch.witch.singular":"Ведьма","faction.vampirismwitch.witch.plural":"Ведьмы","gui.vampirismwitch.lord_level":"Уровень лорда %s"}

@@ -11,55 +11,30 @@ import org.jetbrains.annotations.Nullable;
 
 public class WitchPlayer extends FactionBasePlayer<IWitchPlayer> implements IWitchPlayer {
     private final IDisguise disguise = new IDisguise.None(WitchFactions.WITCH);
-
     public WitchPlayer(Player player) { super(player); }
+    public static WitchPlayer get(Player player) { return player.getData(WitchAttachments.WITCH_PLAYER); }
+    @Override public AttachmentType<?> getType() { return WitchAttachments.WITCH_PLAYER.get(); }
+    @Override public boolean canLeaveFaction() { return true; }
+    @Override public IDisguise getDisguise() { return disguise; }
+    @Override public boolean isDisguised() { return false; }
+    @Override public void levelChanged(FactionUpdate changes) { }
+    @Override public void leaveFaction() { }
+    @Override public void onUpdate() { }
 
-    public static WitchPlayer get(Player player) {
-        return player.getData(WitchAttachments.WITCH_PLAYER);
+    @Override public @Nullable Component getShortLevelDisplay() {
+        // Suppress FactionAPI's level overlay for Witch: our own HUD draws it.
+        return null;
     }
 
-    @Override
-    public AttachmentType<?> getType() { return WitchAttachments.WITCH_PLAYER.get(); }
-
-    @Override
-    public boolean canLeaveFaction() { return true; }
-
-    @Override
-    public IDisguise getDisguise() { return disguise; }
-
-    @Override
-    public boolean isDisguised() { return false; }
-
-    @Override
-    public void levelChanged(FactionUpdate changes) {
-        // Levels and lord levels are stored by FactionAPI.
+    @Override public @Nullable Component getLevelDisplay() {
+        return getPlayerLord().filter(l -> l.getLordLevel() > 0)
+            .map(l -> Component.translatable("gui.vampirismwitch.lord_level", l.getLordLevel()))
+            .orElseGet(() -> Component.translatable("gui.factionapi.level").append(" " + getLevel()));
     }
 
-    @Override
-    public void leaveFaction() {
-        // No witch-only effects in this release.
-    }
-
-    @Override
-    public void onUpdate() {
-        // No passive abilities in this release.
-    }
-
-    @Override
-    public @Nullable Component getShortLevelDisplay() {
-        return Component.literal(String.valueOf(getLevel()));
-    }
-
-    @Override
-    public @Nullable Component getLevelDisplay() {
-        return Component.translatable("gui.factionapi.level").append(" " + getLevel());
-    }
-
-    @Override
-    public @Nullable Component getChatDisplay() { return null; }
+    @Override public @Nullable Component getChatDisplay() { return null; }
 
     public static class AttachmentOptions extends AttachmentSynchronization.PlayerOptions<WitchPlayer> {
-        @Override
-        protected WitchPlayer create(Player player) { return new WitchPlayer(player); }
+        @Override protected WitchPlayer create(Player player) { return new WitchPlayer(player); }
     }
 }
