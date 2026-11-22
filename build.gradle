@@ -2,10 +2,25 @@ plugins {
     id 'java-library'
     id 'net.neoforged.moddev' version '2.0.148'
 }
-version = '0.1.0'
+version = '0.2.0'
 group = 'com.vampirismwitch'
 base { archivesName = 'vampirismwitch' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+repositories {
+    maven {
+        name = 'Maxanier Releases'
+        url = 'https://maven.maxanier.de/releases'
+        content { includeGroupAndSubgroups 'de.teamlapen' }
+    }
+    maven {
+        name = 'Maxanier Snapshots'
+        url = 'https://maven.maxanier.de/snapshots'
+        content { includeGroupAndSubgroups 'de.teamlapen' }
+    }
+}
+dependencies {
+    implementation(accessTransformers(interfaceInjectionData('de.teamlapen.faction:FactionApi:26.1.2-1.0.0-beta.2')))
+}
 neoForge {
     version = '26.1.2.128'
     runs { client { client() } }

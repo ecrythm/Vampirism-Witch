@@ -1,5 +1,8 @@
 package com.vampirismwitch;
 
+import com.vampirismwitch.faction.WitchAttachments;
+import com.vampirismwitch.faction.WitchFactions;
+import de.teamlapen.faction.common.event.PlayerEventHandlerEvent;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -30,5 +33,9 @@ public class VampirismWitch {
     public VampirismWitch(IEventBus modBus) {
         ITEMS.register(modBus);
         TABS.register(modBus);
+        WitchAttachments.ATTACHMENT_TYPES.register(modBus);
+        WitchFactions.register(modBus);
+        modBus.addListener(PlayerEventHandlerEvent.class,
+                event -> event.addAttachmentListener(WitchAttachments.WITCH_PLAYER));
     }
 }

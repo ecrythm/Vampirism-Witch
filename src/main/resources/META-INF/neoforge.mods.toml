@@ -4,10 +4,10 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="vampirismwitch"
-version="0.1.0"
+version="0.2.0"
 displayName="Vampirism: Witch"
 authors="Vampirism: Witch"
-description='''Witch creative inventory tab, pixel witch hat. Witch faction will come in later versions.'''
+description='''Adds a playable Witch faction to FactionAPI, with levels 1–14 and lord levels 1–5.'''
 
 [[dependencies.vampirismwitch]]
 modId="neoforge"
@@ -21,6 +21,13 @@ modId="minecraft"
 type="required"
 versionRange="[26.1.2,26.2)"
 ordering="NONE"
+side="BOTH"
+
+[[dependencies.vampirismwitch]]
+modId="factionapi"
+type="required"
+versionRange="[1.0.0-beta.2,)"
+ordering="AFTER"
 side="BOTH"
 
 [[dependencies.vampirismwitch]]
