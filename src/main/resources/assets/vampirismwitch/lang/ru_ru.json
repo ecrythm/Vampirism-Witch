@@ -1,1 +1,11 @@
-{"itemGroup.vampirismwitch":"Vampirism: Witch","item.vampirismwitch.witch_hat":"Ведьмовская шляпа","faction.vampirismwitch.witch":"Ведьмы","faction.vampirismwitch.witch.singular":"Ведьма","faction.vampirismwitch.witch.plural":"Ведьмы","gui.vampirismwitch.lord_level":"Уровень лорда %s"}
+{
+  "itemGroup.vampirismwitch": "Vampirism: Witch",
+  "item.vampirismwitch.witch_hat": "Ведьмовская шляпа",
+  "faction.vampirismwitch.witch": "Ведьмы",
+  "faction.vampirismwitch.witch.singular": "Ведьма",
+  "faction.vampirismwitch.witch.plural": "Ведьмы",
+  "gui.vampirismwitch.lord_level": "Уровень лорда %s",
+  "gui.vampirismwitch.archmage": "Архимаг",
+  "command.vampirismwitch.archmage.success": "%s получил ранг Архимага",
+  "command.vampirismwitch.archmage.removed": "Ранг Архимага снят"
+}

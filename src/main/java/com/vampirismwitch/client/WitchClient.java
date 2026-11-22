@@ -1,11 +1,13 @@
 package com.vampirismwitch.client;
 
-/**
- * Client-side Witch HUD is intentionally provided by FactionAPI's built-in
- * FactionLevelOverlay using WitchPlayer#getShortLevelDisplay().
- *
- * We no longer register an overlapping custom GUI layer.
- */
+import net.neoforged.neoforge.common.NeoForge;
+
 public final class WitchClient {
     private WitchClient() { }
+
+    public static void register() {
+        // Render after the entire vanilla HUD. No reliance on FactionAPI's
+        // optional overlay setting, experience level layer, or mixins.
+        NeoForge.EVENT_BUS.addListener(WitchHud::onRenderGui);
+    }
 }

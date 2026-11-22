@@ -4,10 +4,10 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="vampirismwitch"
-version="0.2.2"
+version="0.3.0"
 displayName="Vampirism: Witch"
 authors="Vampirism: Witch"
-description='''Witch faction, ranks 1-14 and lord levels 1-5, with FactionAPI HUD integration.'''
+description='''Witch faction, 14 levels, 5 lord levels, Archmage rank, and dark purple HUD.'''
 
 [[dependencies.vampirismwitch]]
 modId="neoforge"

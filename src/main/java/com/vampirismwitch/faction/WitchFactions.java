@@ -5,18 +5,20 @@ import de.teamlapen.faction.api.factions.IPlayableFaction;
 import de.teamlapen.faction.api.registries.factions.DeferredFaction;
 import de.teamlapen.faction.api.registries.factions.DeferredFactionRegister;
 import de.teamlapen.faction.common.factions.PlayableFaction;
-import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.TextColor;
 import net.neoforged.bus.api.IEventBus;
 
 public class WitchFactions {
+    // Dark purple-black, shared by the faction nickname and HUD indicator.
+    public static final int WITCH_COLOR = 0x2B192F;
     private static final DeferredFactionRegister FACTIONS =
             DeferredFactionRegister.create(VampirismWitch.MOD_ID);
 
     public static final DeferredFaction<IWitchPlayer, IPlayableFaction<IWitchPlayer>> WITCH =
             FACTIONS.registerFaction("witch", properties -> new PlayableFaction<>(properties
                     .playerAttachment(WitchAttachments.WITCH_PLAYER)
-                    .color(0x7E49AC)
-                    .chatColor(ChatFormatting.DARK_PURPLE)
+                    .color(WITCH_COLOR)
+                    .chatColor(TextColor.fromRgb(WITCH_COLOR))
                     .maxLevel(14)
                     .lord(5)));
 

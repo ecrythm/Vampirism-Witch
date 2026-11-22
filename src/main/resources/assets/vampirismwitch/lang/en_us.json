@@ -1,1 +1,11 @@
-{"itemGroup.vampirismwitch":"Vampirism: Witch","item.vampirismwitch.witch_hat":"Witch Hat","faction.vampirismwitch.witch":"Witch","faction.vampirismwitch.witch.singular":"Witch","faction.vampirismwitch.witch.plural":"Witches","gui.vampirismwitch.lord_level":"Lord Level %s"}
+{
+  "itemGroup.vampirismwitch": "Vampirism: Witch",
+  "item.vampirismwitch.witch_hat": "Witch Hat",
+  "faction.vampirismwitch.witch": "Witch",
+  "faction.vampirismwitch.witch.singular": "Witch",
+  "faction.vampirismwitch.witch.plural": "Witches",
+  "gui.vampirismwitch.lord_level": "Lord Level %s",
+  "gui.vampirismwitch.archmage": "Archmage",
+  "command.vampirismwitch.archmage.success": "%s is now an Archmage",
+  "command.vampirismwitch.archmage.removed": "Archmage rank removed"
+}

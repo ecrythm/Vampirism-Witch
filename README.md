@@ -1,23 +1,21 @@
-# Vampirism: Witch v0.2.2
+# Vampirism: Witch 0.3.0
 
-Minecraft 26.1.2 / NeoForge / Vampirism / FactionAPI.
+Minecraft 26.1.2, NeoForge, FactionAPI, Vampirism.
 
-## Fix
-- Normal Witch level 1–14 is displayed using **FactionAPI's built-in level HUD**, just like for vampires and hunters.
-- The separate Witch GUI layer is removed to prevent conflicts.
-- The `P` screen still shows `Lord Level 1–5` when you are a lord.
-- HUD deliberately shows only the normal level (not lord titles).
-- No new abilities or lord title names added.
+## What's new
+- **Witch level HUD:** renders directly after the main Minecraft GUI, independently of FactionAPI's overlay setting. Displays only regular Witch level 1–14.
+- **Colors:** nickname and HUD use the same almost-black purple (#2B192F).
+- **Archmage:** special rank beyond Witch Lord 5. No additional lord titles or abilities yet. It persists through saves/death and syncs to the client. Faction menu displays Archmage.
 
-## Commands
+## Commands (requires cheats / operator)
 ```mcfunction
-/factions faction set vampirismwitch:witch level 1
 /factions faction set vampirismwitch:witch level 7
-/factions faction set vampirismwitch:witch level 14
 /factions faction set vampirismwitch:witch lord 5
+/witch archmage
+/witch archmage remove
 ```
-
-The HUD is shown in Survival, provided FactionAPI's client setting `showFactionLevelOverlay` is enabled. Its default vertical offset is 47 pixels from the bottom; change that setting if desired.
+`/witch archmage` grants Witch level 14 + Witch Lord level 5 + the Archmage flag.
+Removing Archmage rank leaves the existing lord level unchanged.
 
 ## Install
-Download the latest successful GitHub Actions artifact `Vampirism-Witch-0.2.2`. Unzip the .jar and **remove older Vampirism Witch jars** from mods before launching.
+Download the **Vampirism-Witch-0.3.0** artifact from latest successful GitHub Actions run. Extract JAR and replace older Witch JAR.
