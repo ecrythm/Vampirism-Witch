@@ -1,36 +1,22 @@
-# Vampirism: Witch v0.2.0
+# Vampirism: Witch v0.2.1
 
-Requires **Minecraft 26.1.2**, **NeoForge**, **Java 25**, **Vampirism**, **FactionAPI 1.0.0-beta.2+**.
+Minecraft 26.1.2, NeoForge, FactionAPI, Vampirism.
 
-This version registers `vampirismwitch:witch` through the real FactionAPI. Witch has levels **1–14** and lord levels **1–5**. Creative-mode tab with pixel hat from v0.1.0 remains.
+## Changes
+- Witch faction screen displays **Lord Level N** when a lord rank is assigned, rather than always **Level 14**.
+- Unique purple **normal level 1–14 HUD** positioned centrally between the health and hunger bars.
+- HUD shows only ordinary levels, **not lord ranks**.
+- Witch lord rank names intentionally left unassigned for future updates.
 
-## Commands (cheats / OP level 2)
-
-Join Witch at level 1:
-```
+## Testing
+```mcfunction
 /factions faction set vampirismwitch:witch level 1
-```
-
-Set Witch level 14:
-```
 /factions faction set vampirismwitch:witch level 14
-```
-
-Set Witch lord level 5 (automatically grants max regular level):
-```
 /factions faction set vampirismwitch:witch lord 5
-```
-
-Read current faction:
-```
 /factions faction get @s
 ```
 
-Test any intermediate level with `/factions faction set vampirismwitch:witch level 7` and any lord level with `/factions faction set vampirismwitch:witch lord 3`.
+With the level 5 lord rank, press P: the faction menu should say `Lord Level 5`; after closing it, the HUD should still show normal level `14`.
 
-Commands are provided by FactionAPI. Potion recipes, skills, combat bonuses, and other Witch features are **not included** in this release.
-
-## Download build
-
-GitHub > Actions > latest successful `Build Vampirism Witch JAR` > Artifacts > `Vampirism-Witch-0.2.0`.
-Unzip and copy the included `.jar` to `mods`. Remove v0.1.0 from mods before testing.
+## Download
+GitHub > Actions > latest green Build Vampirism Witch JAR > Artifacts > Vampirism-Witch-0.2.1. Unzip, install the .jar into mods and delete previous Witch JAR.

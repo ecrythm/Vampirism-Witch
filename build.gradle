@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'net.neoforged.moddev' version '2.0.148'
 }
-version = '0.2.0'
+version = '0.2.1'
 group = 'com.vampirismwitch'
 base { archivesName = 'vampirismwitch' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)

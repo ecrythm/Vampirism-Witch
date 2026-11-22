@@ -4,10 +4,10 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="vampirismwitch"
-version="0.2.0"
+version="0.2.1"
 displayName="Vampirism: Witch"
 authors="Vampirism: Witch"
-description='''Adds a playable Witch faction to FactionAPI, with levels 1–14 and lord levels 1–5.'''
+description='''Witch faction, ranks 1-14 and lord levels 1-5, with dedicated HUD level display.'''
 
 [[dependencies.vampirismwitch]]
 modId="neoforge"
@@ -15,21 +15,18 @@ type="required"
 versionRange="[26.1.2.71,)"
 ordering="NONE"
 side="BOTH"
-
 [[dependencies.vampirismwitch]]
 modId="minecraft"
 type="required"
 versionRange="[26.1.2,26.2)"
 ordering="NONE"
 side="BOTH"
-
 [[dependencies.vampirismwitch]]
 modId="factionapi"
 type="required"
 versionRange="[1.0.0-beta.2,)"
 ordering="AFTER"
 side="BOTH"
-
 [[dependencies.vampirismwitch]]
 modId="vampirism"
 type="required"
