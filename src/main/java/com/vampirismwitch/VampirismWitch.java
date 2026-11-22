@@ -42,7 +42,7 @@ public class VampirismWitch {
         modBus.addListener(PlayerEventHandlerEvent.class,
                 event -> event.addAttachmentListener(WitchAttachments.WITCH_PLAYER));
         NeoForge.EVENT_BUS.addListener(WitchCommands::register);
-        if (FMLEnvironment.dist == Dist.CLIENT) {
+        if (FMLEnvironment.getDist() == Dist.CLIENT) {
             com.vampirismwitch.client.WitchClient.register();
         }
     }
