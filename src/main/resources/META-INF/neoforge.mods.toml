@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="vampirismwitch"
+version="0.1.0"
+displayName="Vampirism: Witch"
+authors="Vampirism: Witch"
+description='''Witch creative inventory tab, pixel witch hat. Witch faction will come in later versions.'''
+
+[[dependencies.vampirismwitch]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.71,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.vampirismwitch]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2,26.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.vampirismwitch]]
+modId="vampirism"
+type="required"
+versionRange="[0,)"
+ordering="AFTER"
+side="BOTH"
