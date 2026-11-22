@@ -1,22 +1,23 @@
-# Vampirism: Witch v0.2.1
+# Vampirism: Witch v0.2.2
 
-Minecraft 26.1.2, NeoForge, FactionAPI, Vampirism.
+Minecraft 26.1.2 / NeoForge / Vampirism / FactionAPI.
 
-## Changes
-- Witch faction screen displays **Lord Level N** when a lord rank is assigned, rather than always **Level 14**.
-- Unique purple **normal level 1–14 HUD** positioned centrally between the health and hunger bars.
-- HUD shows only ordinary levels, **not lord ranks**.
-- Witch lord rank names intentionally left unassigned for future updates.
+## Fix
+- Normal Witch level 1–14 is displayed using **FactionAPI's built-in level HUD**, just like for vampires and hunters.
+- The separate Witch GUI layer is removed to prevent conflicts.
+- The `P` screen still shows `Lord Level 1–5` when you are a lord.
+- HUD deliberately shows only the normal level (not lord titles).
+- No new abilities or lord title names added.
 
-## Testing
+## Commands
 ```mcfunction
 /factions faction set vampirismwitch:witch level 1
+/factions faction set vampirismwitch:witch level 7
 /factions faction set vampirismwitch:witch level 14
 /factions faction set vampirismwitch:witch lord 5
-/factions faction get @s
 ```
 
-With the level 5 lord rank, press P: the faction menu should say `Lord Level 5`; after closing it, the HUD should still show normal level `14`.
+The HUD is shown in Survival, provided FactionAPI's client setting `showFactionLevelOverlay` is enabled. Its default vertical offset is 47 pixels from the bottom; change that setting if desired.
 
-## Download
-GitHub > Actions > latest green Build Vampirism Witch JAR > Artifacts > Vampirism-Witch-0.2.1. Unzip, install the .jar into mods and delete previous Witch JAR.
+## Install
+Download the latest successful GitHub Actions artifact `Vampirism-Witch-0.2.2`. Unzip the .jar and **remove older Vampirism Witch jars** from mods before launching.

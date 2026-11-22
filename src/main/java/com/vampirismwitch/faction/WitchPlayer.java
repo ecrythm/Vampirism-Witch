@@ -22,8 +22,10 @@ public class WitchPlayer extends FactionBasePlayer<IWitchPlayer> implements IWit
     @Override public void onUpdate() { }
 
     @Override public @Nullable Component getShortLevelDisplay() {
-        // Suppress FactionAPI's level overlay for Witch: our own HUD draws it.
-        return null;
+        // FactionAPI's built-in FactionLevelOverlay draws this between
+        // health and hunger, just like Vampire and Hunter.
+        // This is intentionally the normal level even if the player is a lord.
+        return getLevel() > 0 ? Component.literal(Integer.toString(getLevel())) : null;
     }
 
     @Override public @Nullable Component getLevelDisplay() {
