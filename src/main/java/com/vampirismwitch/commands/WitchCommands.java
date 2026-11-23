@@ -19,29 +19,18 @@ public final class WitchCommands {
 
     @SubscribeEvent
     public static void register(RegisterCommandsEvent event) {
-        registerRoot(event, "witch");
-        registerRoot(event, "vampirismwitch");
-        VampirismWitch.LOGGER.info("Registered Witch commands: /witch archmage, /vampirismwitch archmage");
-    }
-
-    private static void registerRoot(RegisterCommandsEvent event, String root) {
-        event.getDispatcher().register(Commands.literal(root)
-                .requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
-                .then(Commands.literal("status")
-                        .executes(ctx -> {
-                            ServerPlayer player = ctx.getSource().getPlayerOrException();
-                            var handler = FactionPlayerHandler.get(player);
-                            boolean witch = handler.isInFaction(WitchFactions.WITCH);
-                            boolean archmage = witch && player.getData(WitchAttachments.ARCHMAGE);
-                            ctx.getSource().sendSuccess(() -> Component.literal(
-                                    "Witch: " + witch + ", level: " + handler.getCurrentLevel() +
-                                    ", Archmage: " + archmage), false);
-                            return 1;
-                        }))
-                .then(Commands.literal("archmage")
-                        .executes(ctx -> grantArchmage(ctx.getSource()))
-                        .then(Commands.literal("remove")
-                                .executes(ctx -> removeArchmage(ctx.getSource())))));
+        // Brigadier merges the shared /factions faction set nodes with the
+        // FactionAPI tree, preserving its existing level and lord subcommands.
+        event.getDispatcher().register(Commands.literal("factions")
+                .then(Commands.literal("faction")
+                        .then(Commands.literal("set")
+                                .then(Commands.literal("vampirismwitch:witch")
+                                        .then(Commands.literal("archmage")
+                                                .requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
+                                                .executes(ctx -> grantArchmage(ctx.getSource()))
+                                                .then(Commands.literal("remove")
+                                                        .executes(ctx -> removeArchmage(ctx.getSource()))))))));
+        VampirismWitch.LOGGER.info("Registered /factions faction set vampirismwitch:witch archmage");
     }
 
     private static int grantArchmage(CommandSourceStack source) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
@@ -59,6 +48,10 @@ public final class WitchCommands {
 
     private static int removeArchmage(CommandSourceStack source) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
         ServerPlayer player = source.getPlayerOrException();
+        if (!FactionPlayerHandler.get(player).isInFaction(WitchFactions.WITCH)) {
+            source.sendFailure(Component.literal("You are not a Witch"));
+            return 0;
+        }
         player.setData(WitchAttachments.ARCHMAGE, false);
         player.refreshDisplayName();
         source.sendSuccess(() -> Component.translatable("command.vampirismwitch.archmage.removed"), true);
