@@ -1,6 +1,6 @@
 package com.vampirismwitch;
 
-import com.vampirismwitch.commands.WitchCommands;
+import com.mojang.logging.LogUtils;
 import com.vampirismwitch.faction.WitchAttachments;
 import com.vampirismwitch.faction.WitchFactions;
 import de.teamlapen.faction.common.event.PlayerEventHandlerEvent;
@@ -8,18 +8,17 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.loading.FMLEnvironment;
-import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.slf4j.Logger;
 
 @Mod(VampirismWitch.MOD_ID)
 public class VampirismWitch {
     public static final String MOD_ID = "vampirismwitch";
+    public static final Logger LOGGER = LogUtils.getLogger();
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MOD_ID);
     public static final DeferredRegister<CreativeModeTab> TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
@@ -41,9 +40,6 @@ public class VampirismWitch {
         WitchFactions.register(modBus);
         modBus.addListener(PlayerEventHandlerEvent.class,
                 event -> event.addAttachmentListener(WitchAttachments.WITCH_PLAYER));
-        NeoForge.EVENT_BUS.addListener(WitchCommands::register);
-        if (FMLEnvironment.getDist() == Dist.CLIENT) {
-            com.vampirismwitch.client.WitchClient.register();
-        }
+        LOGGER.info("Vampirism: Witch 0.3.1 initialized; HUD and commands use event subscribers.");
     }
 }

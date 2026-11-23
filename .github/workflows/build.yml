@@ -1,10 +1,8 @@
 name: Build Vampirism Witch JAR
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,10 +20,14 @@ jobs:
         with:
           gradle-version: '9.2.1'
       - name: Build mod
-        run: gradle build --stacktrace
+        run: gradle clean build --stacktrace
+      - name: Verify compiled HUD and Archmage commands
+        run: |
+          jar tf build/libs/vampirismwitch-0.3.1.jar | grep 'com/vampirismwitch/client/WitchHud.class'
+          jar tf build/libs/vampirismwitch-0.3.1.jar | grep 'com/vampirismwitch/commands/WitchCommands.class'
       - name: Upload test JAR
         uses: actions/upload-artifact@v4
         with:
-          name: Vampirism-Witch-0.3.0
-          path: build/libs/*.jar
+          name: Vampirism-Witch-0.3.1
+          path: build/libs/vampirismwitch-0.3.1.jar
           if-no-files-found: error

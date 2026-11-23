@@ -13,7 +13,6 @@ public class WitchPlayer extends FactionBasePlayer<IWitchPlayer> implements IWit
     private final IDisguise disguise = new IDisguise.None(WitchFactions.WITCH);
     public WitchPlayer(Player player) { super(player); }
     public static WitchPlayer get(Player player) { return player.getData(WitchAttachments.WITCH_PLAYER); }
-
     @Override public AttachmentType<?> getType() { return WitchAttachments.WITCH_PLAYER.get(); }
     @Override public boolean canLeaveFaction() { return true; }
     @Override public IDisguise getDisguise() { return disguise; }
@@ -32,17 +31,16 @@ public class WitchPlayer extends FactionBasePlayer<IWitchPlayer> implements IWit
     }
 
     @Override public @Nullable Component getShortLevelDisplay() {
-        // Standard FactionAPI level HUD fallback.
-        return getLevel() > 0 ? Component.literal(Integer.toString(getLevel())) : null;
+        // The independent WitchHud renders the level; disable FactionAPI's
+        // optional overlay for witches to avoid rendering it twice.
+        return null;
     }
 
     @Override public @Nullable Component getLevelDisplay() {
-        if (player.getData(WitchAttachments.ARCHMAGE)) {
-            return Component.translatable("gui.vampirismwitch.archmage");
-        }
+        if (player.getData(WitchAttachments.ARCHMAGE)) return Component.translatable("gui.vampirismwitch.archmage");
         return getPlayerLord().filter(l -> l.getLordLevel() > 0)
-                .map(l -> Component.translatable("gui.vampirismwitch.lord_level", l.getLordLevel()))
-                .orElseGet(() -> Component.translatable("gui.factionapi.level").append(" " + getLevel()));
+            .map(l -> Component.translatable("gui.vampirismwitch.lord_level", l.getLordLevel()))
+            .orElseGet(() -> Component.translatable("gui.factionapi.level").append(" " + getLevel()));
     }
 
     @Override public @Nullable Component getChatDisplay() { return null; }

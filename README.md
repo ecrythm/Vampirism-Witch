@@ -1,21 +1,26 @@
-# Vampirism: Witch 0.3.0
+# Vampirism: Witch v0.3.1
 
-Minecraft 26.1.2, NeoForge, FactionAPI, Vampirism.
+Minecraft 26.1.2, NeoForge, Vampirism and FactionAPI.
 
-## What's new
-- **Witch level HUD:** renders directly after the main Minecraft GUI, independently of FactionAPI's overlay setting. Displays only regular Witch level 1–14.
-- **Colors:** nickname and HUD use the same almost-black purple (#2B192F).
-- **Archmage:** special rank beyond Witch Lord 5. No additional lord titles or abilities yet. It persists through saves/death and syncs to the client. Faction menu displays Archmage.
+## Changes
 
-## Commands (requires cheats / operator)
-```mcfunction
-/factions faction set vampirismwitch:witch level 7
-/factions faction set vampirismwitch:witch lord 5
-/witch archmage
-/witch archmage remove
-```
-`/witch archmage` grants Witch level 14 + Witch Lord level 5 + the Archmage flag.
-Removing Archmage rank leaves the existing lord level unchanged.
+- The Witch level HUD now uses an automatically subscribed client event, no longer manual registration. The dark-purple number has a pale outline for contrast.
+- Two command aliases are registered automatically: `/witch archmage` and `/vampirismwitch archmage`.
+- Debug command `/witch status` displays current Witch faction, level and Archmage flag.
+- The Archmage rank grants Witch level 14 and Lord level 5; P-screen shows Archmage. HUD still shows normal levels 1–14.
+- Faction nickname stays almost black-purple (hex 2B192F).
 
 ## Install
-Download the **Vampirism-Witch-0.3.0** artifact from latest successful GitHub Actions run. Extract JAR and replace older Witch JAR.
+Replace the older JAR in mods with version 0.3.1. On multiplayer/LAN, install it **on the server/host as well as on the client**; server-only commands will not exist otherwise.
+
+## Commands
+```
+/witch status
+/witch archmage
+/vampirismwitch archmage
+/witch archmage remove
+/factions faction set vampirismwitch:witch level 7
+```
+
+The Archmage commands require cheats (OP permissions).
+If tab completion does not show `/witch`, check `logs/latest.log` for `Vampirism: Witch 0.3.1 initialized` and `Registered Witch commands`.

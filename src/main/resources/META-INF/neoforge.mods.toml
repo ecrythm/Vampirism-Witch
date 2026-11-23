@@ -1,14 +1,12 @@
 modLoader="javafml"
 loaderVersion="[1,)"
 license="All Rights Reserved"
-
 [[mods]]
 modId="vampirismwitch"
-version="0.3.0"
+version="0.3.1"
 displayName="Vampirism: Witch"
 authors="Vampirism: Witch"
-description='''Witch faction, 14 levels, 5 lord levels, Archmage rank, and dark purple HUD.'''
-
+description='''Witch faction, normal levels 1–14, lord levels 1–5, Archmage and improved HUD.'''
 [[dependencies.vampirismwitch]]
 modId="neoforge"
 type="required"
