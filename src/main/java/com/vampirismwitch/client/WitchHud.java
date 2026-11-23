@@ -20,10 +20,10 @@ public final class WitchHud {
     public static void onRenderGui(RenderGuiEvent.Post event) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || !mc.player.isAlive() || mc.options.hideGui ||
-                mc.gameMode == null || mc.gameMode.getPlayerMode() == GameType.CREATIVE ||
-                mc.player.isSpectator()) {
-            return;
-        }
+                mc.gameMode == null) return;
+
+        GameType mode = mc.gameMode.getPlayerMode();
+        if (mode != GameType.SURVIVAL && mode != GameType.ADVENTURE) return;
 
         FactionPlayerHandler handler = FactionPlayerHandler.get(mc.player);
         if (!handler.isInFaction(WitchFactions.WITCH)) return;
@@ -31,15 +31,15 @@ public final class WitchHud {
         int level = handler.getCurrentLevel();
         if (level < 1) return;
 
-        // Archmage is a special rank above Lord 5; do not show "14" for Archmage.
         boolean archmage = mc.player.getData(WitchAttachments.ARCHMAGE);
         Component label = Component.literal(archmage ? "Arch" : Integer.toString(level));
 
         int x = (mc.getWindow().getGuiScaledWidth() - mc.font.width(label)) / 2;
         int y = mc.getWindow().getGuiScaledHeight() - 47;
 
-        // Minecraft-style text with one dark shadow, not four overlapping
-        // white outlines (which made the narrow level digits look distorted).
-        event.getGuiGraphics().text(mc.font, label, x, y, 0x9265A3, true);
+        // GUI colors are ARGB, not RGB. 0xFF is the opaque alpha channel.
+        // Previously the missing alpha (0x9265A3) made the text transparent.
+        // Keep a single vanilla text shadow rather than multiple blurry outlines.
+        event.getGuiGraphics().text(mc.font, label, x, y, 0xFF74517F, true);
     }
 }

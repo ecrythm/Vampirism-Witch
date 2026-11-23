@@ -3,10 +3,10 @@ loaderVersion="[1,)"
 license="All Rights Reserved"
 [[mods]]
 modId="vampirismwitch"
-version="0.3.2"
+version="0.3.3"
 displayName="Vampirism: Witch"
 authors="Vampirism: Witch"
-description='''Witch faction, 14 levels, 5 lord levels, Archmage rank and streamlined level HUD.'''
+description='''Witch faction, 14 levels, 5 lord levels, Archmage command target selection and opaque level HUD.'''
 [[dependencies.vampirismwitch]]
 modId="neoforge"
 type="required"
