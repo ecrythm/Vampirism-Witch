@@ -3,7 +3,7 @@ loaderVersion="[1,)"
 license="All Rights Reserved"
 [[mods]]
 modId="vampirismwitch"
-version="0.4.0"
+version="0.4.1"
 displayName="Vampirism: Witch"
 authors="Vampirism: Witch"
 description='''Witch faction, special cauldron, first skill and peaceful monster targeting.'''

@@ -10,10 +10,11 @@
   "gui.vampirismwitch.archmage": "Архимаг",
   "command.vampirismwitch.archmage.success": "%s получил ранг Архимага",
   "skill.vampirismwitch.cauldron_mastery": "Ведьмовское зельеварение",
-  "skill.vampirismwitch.cauldron_mastery.desc": "Первый навык ведьмы. Позволяет пользоваться особым котлом.",
+  "skill.vampirismwitch.cauldron_mastery.desc": "Теперь ты ведьма! Ты можешь использовать ведьмовской котёл!",
   "gui.vampirismwitch.skills": "Навыки ведьмы",
   "message.vampirismwitch.only_witches": "Котёл доступен только ведьмам с 1 уровня",
   "message.vampirismwitch.heating": "Котёл нагревается",
   "message.vampirismwitch.brew_ready": "Ночной отвар готов! Используй стеклянную бутылочку",
-  "message.vampirismwitch.instructions": "Налей воду из ведра, подожги огнивом, добавь светящиеся ягоды и возьми зелье бутылочкой"
+  "advancement.vampirismwitch.root": "Это только начало!",
+  "advancement.vampirismwitch.root.desc": "Стань ведьмой"
 }

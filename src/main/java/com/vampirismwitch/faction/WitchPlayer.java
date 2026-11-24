@@ -30,7 +30,14 @@ public class WitchPlayer extends FactionBasePlayer<IWitchPlayer> implements IWit
     @Override public ISkillHandler<IWitchPlayer> getSkillHandler() { return skills; }
 
     @Override public void onUpdate() {
-        if (getLevel() > 0) actions.updateActions();
+        if (getLevel() > 0) {
+            actions.updateActions();
+            // Keep the free first skill enabled after level changes and reloads.
+            // FactionAPI will only enable skills once their tree is unlocked.
+            if (!isRemote() && !skills.isSkillEnabled(WitchSkills.CAULDRON_MASTERY)) {
+                skills.enableSkill(WitchSkills.CAULDRON_MASTERY);
+            }
+        }
     }
 
     @Override public void levelChanged(FactionUpdate changes) {

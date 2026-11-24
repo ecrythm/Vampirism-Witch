@@ -1,7 +1,7 @@
 {
   "background": "minecraft:block/spruce_planks",
   "display": {
-    "id": "vampirismwitch:witch_cauldron"
+    "id": "vampirismwitch:witch_hat"
   },
   "faction": "vampirismwitch:witch",
   "name": {

@@ -101,9 +101,7 @@ public class WitchCauldronBlock extends Block {
             return InteractionResult.SUCCESS;
         }
 
-        if (!level.isClientSide()) player.sendOverlayMessage(
-                Component.translatable("message.vampirismwitch.instructions"));
-        return InteractionResult.SUCCESS;
+        return InteractionResult.PASS;
     }
 
     private static void replaceConsumed(Player player, InteractionHand hand,

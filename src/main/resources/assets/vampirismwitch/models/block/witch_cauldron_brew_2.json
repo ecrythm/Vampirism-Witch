@@ -6,28 +6,16 @@
   "elements": [
     {
       "from": [
-        3,
-        13,
-        3
+        2,
+        11,
+        2
       ],
       "to": [
-        13,
-        13.25,
-        13
+        14,
+        11.2,
+        14
       ],
       "faces": {
-        "north": {
-          "texture": "#surface"
-        },
-        "south": {
-          "texture": "#surface"
-        },
-        "east": {
-          "texture": "#surface"
-        },
-        "west": {
-          "texture": "#surface"
-        },
         "up": {
           "texture": "#surface"
         },

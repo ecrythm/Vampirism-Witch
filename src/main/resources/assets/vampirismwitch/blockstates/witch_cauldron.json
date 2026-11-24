@@ -7,6 +7,22 @@
     },
     {
       "when": {
+        "lit": "false"
+      },
+      "apply": {
+        "model": "minecraft:block/campfire_off"
+      }
+    },
+    {
+      "when": {
+        "lit": "true"
+      },
+      "apply": {
+        "model": "minecraft:block/campfire"
+      }
+    },
+    {
+      "when": {
         "water": "1",
         "brewed": "false"
       },
@@ -57,14 +73,6 @@
       },
       "apply": {
         "model": "vampirismwitch:block/witch_cauldron_brew_3"
-      }
-    },
-    {
-      "when": {
-        "lit": "true"
-      },
-      "apply": {
-        "model": "vampirismwitch:block/witch_cauldron_fire"
       }
     }
   ]

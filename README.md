@@ -1,24 +1,23 @@
-# Vampirism: Witch v0.4.0
+# Vampirism: Witch v0.4.1
 
-NeoForge Minecraft 26.1.2, Vampirism and FactionAPI.
+NeoForge 26.1.2 / Vampirism / FactionAPI.
 
-### Added
-- The faction P-screen nickname/level title and HUD share a muted purple color `#74517F`.
-- **Witch Cauldron** in the creative tab and recipe: a vanilla Cauldron above a Campfire in a crafting grid.
-- A block with water levels, heating, and a simple first experimental night-vision brew: water bucket -> flint & steel -> glow berries -> glass bottle. Water holds up to 3 bottles. Only level 1+ Witches can operate it.
-- **Witch Brewing**, a level-one root skill in the Witch skill tree registered with FactionAPI, intended to be auto-unlocked as soon as a Witch joins.
-- Hostile mobs stop acquiring level 1+ witches as targets. Wither Skeletons and Endermen are exceptions; vanilla Enderman gaze aggression is preserved.
-- The previous Archmage and level HUD features are unchanged.
+### Fixes
+- Witch Brewing skill uses the existing pixel-art Witch Hat icon instead of the missing-texture square.
+- Skill description: **You're now a witch! You can use the witch's cauldron now!**
+- The root skill is re-enabled when necessary after leveling up or reloading, so it remains displayed as unlocked.
+- Redesigned cauldron: legless vanilla cauldron bowl directly above the vanilla campfire models. Fire visuals follow the lit state. Rebuilt the water levels.
+- Clicking the cauldron with an unrelated item no longer displays brewing instructions.
 
-### Notes
-Mob neutrality is based on AI targeting, not damage immunity or projectile interception. Some modded mobs may use custom targeting systems not covered by NeoForge's targeting event. The night-vision brew is a first demonstrative recipe, not a complete potion catalogue.
+### Advancement
+- New Witch advancements tab, with its first advancement:
+  - **This is only the begging!**
+  - **Become a witch**
+- Uses FactionAPI's faction advancement trigger when Witch level 1 is reached.
 
-### Commands
-```
-/factions faction set vampirismwitch:witch level 1
-/factions faction set vampirismwitch:witch level 14
-/factions faction set vampirismwitch:witch archmage
-/factions faction set vampirismwitch:witch archmage @s
-```
+### Verification
+- The witch cauldron remains level-gated.
+- Commands and special Archmage HUD remain unchanged.
 
-Download the latest green GitHub Actions `Vampirism-Witch-0.4.0` artifact and install the JAR on host/server and client. Remove the previous JAR.
+### Install
+Go to GitHub Actions, download **Vampirism-Witch-0.4.1** from the latest successful build, unzip it, and replace the prior Witch JAR in both the client and host/server mods folders.
