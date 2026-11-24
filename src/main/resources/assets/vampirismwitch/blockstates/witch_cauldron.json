@@ -12,6 +12,14 @@
     },
     {
       "when": {
+        "lit": "true"
+      },
+      "apply": {
+        "model": "vampirismwitch:block/witch_cauldron_flame"
+      }
+    },
+    {
+      "when": {
         "water": "1"
       },
       "apply": {

@@ -4,24 +4,28 @@
       "id": "vampirismwitch:witch_hat"
     },
     "title": {
-      "translate": "advancement.vampirismwitch.tab"
+      "translate": "advancement.vampirismwitch.root"
     },
     "description": {
-      "translate": "advancement.vampirismwitch.tab.desc"
+      "translate": "advancement.vampirismwitch.root.desc"
     },
     "background": "minecraft:block/purple_concrete",
-    "show_toast": false,
-    "announce_to_chat": false,
+    "show_toast": true,
+    "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "init": {
-      "trigger": "minecraft:tick"
+    "become_witch": {
+      "trigger": "factionapi:faction",
+      "conditions": {
+        "faction": "vampirismwitch:witch",
+        "level": 1
+      }
     }
   },
   "requirements": [
     [
-      "init"
+      "become_witch"
     ]
   ],
   "sends_telemetry_event": false

@@ -1,0 +1,56 @@
+{
+  "render_type": "minecraft:cutout",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "minecraft:block/campfire_fire",
+    "fire": "minecraft:block/campfire_fire"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        3,
+        7.5
+      ],
+      "to": [
+        10,
+        7,
+        8.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#fire"
+        },
+        "south": {
+          "texture": "#fire"
+        },
+        "up": {
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        7.5,
+        3,
+        6
+      ],
+      "to": [
+        8.5,
+        7,
+        10
+      ],
+      "faces": {
+        "west": {
+          "texture": "#fire"
+        },
+        "east": {
+          "texture": "#fire"
+        },
+        "up": {
+          "texture": "#fire"
+        }
+      }
+    }
+  ]
+}

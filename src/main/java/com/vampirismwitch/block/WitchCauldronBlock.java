@@ -56,15 +56,18 @@ public class WitchCauldronBlock extends Block {
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         // Blue water bubbles on the surface when the cauldron is heated.
         // No vanilla fire model is rendered above the logs.
-        if (state.getValue(LIT) && state.getValue(WATER) > 0 && random.nextInt(4) == 0) {
+        if (state.getValue(LIT) && state.getValue(WATER) > 0) {
             double y = pos.getY() + switch (state.getValue(WATER)) {
                 case 1 -> 9.8 / 16.0;
                 case 2 -> 11.7 / 16.0;
                 default -> 13.6 / 16.0;
             };
-            level.addParticle(ParticleTypes.BUBBLE_POP,
-                    pos.getX() + 0.25 + random.nextDouble() * 0.5, y,
-                    pos.getZ() + 0.25 + random.nextDouble() * 0.5, 0, 0.025, 0);
+            // More frequent small bubbles, but avoid overwhelming particle settings.
+            for (int i = 0; i < 2 + random.nextInt(2); i++) {
+                level.addParticle(ParticleTypes.BUBBLE_POP,
+                        pos.getX() + 0.23 + random.nextDouble() * 0.54, y,
+                        pos.getZ() + 0.23 + random.nextDouble() * 0.54, 0, 0.025, 0);
+            }
         }
     }
 

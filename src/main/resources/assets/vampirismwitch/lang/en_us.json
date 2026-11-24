@@ -18,5 +18,8 @@
   "advancement.vampirismwitch.root": "This is only the begging!",
   "advancement.vampirismwitch.root.desc": "Become a witch",
   "advancement.vampirismwitch.tab": "Witch",
-  "advancement.vampirismwitch.tab.desc": "Witchcraft achievements"
+  "advancement.vampirismwitch.tab.desc": "Witchcraft achievements",
+  "tooltip.vampirismwitch.faction_specifics": "Faction Specifics:",
+  "tooltip.vampirismwitch.witch": "Witch",
+  "tooltip.vampirismwitch.required_level": "Required Level: 1"
 }
