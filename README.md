@@ -1,16 +1,13 @@
-# Vampirism: Witch v0.5.2
+# Vampirism: Witch 0.5.3
 
-NeoForge / Minecraft 26.1.2 / Vampirism / FactionAPI.
+Fixes level 2 skill points by restoring the FactionAPI default skill point tag for the Witch level tree.
 
-## Fixed
-- Correct localized text for Witch skill points in both English and Russian (including 1-point singular).
-- The Witch skill-point provider now gets the current Witch level from FactionPlayerHandler, rather than a potentially stale player capability.
-- This provider affects only the Witch level skill tree.
-- Skill progression stays: Level 1 = 0; Level 2 = 1; Level 3 = 2; Level 4 = 3; Level 5 = 5; then +2 per level.
-- Skill cost is deducted by FactionAPI via the custom Witch skill-tree point tag.
+## Progression
+- FactionAPI grants the normal first point at level 2 and one every later level.
+- Witch adds one **extra** point at each level starting at level 5.
+- Level 1: 0 points; level 2: 1; level 3: 2; level 4: 3; level 5: 5; level 6: 7; level 14: 23.
+- Points spent on Potion Resistance are deducted by FactionAPI automatically.
 
-## Test
-1. Switch to Witch level 2 and open skills: should show 1 skill point.
-2. Buy Potion Resistance, then re-open: should show 0 points.
-3. Increase to level 3: should show 1 point available after the purchase.
-4. If the point count still shows zero at level 2, attach latest.log so we can inspect player synchronization and registration.
+The prior custom skill point tag prevented the built-in leveling provider from contributing. No separate custom skill point tag is needed.
+
+Test at level 2 before buying Potion Resistance, then at levels 5 and 6. If a server changes FactionAPI's standard skill-points-per-level configuration from 1, that configuration also affects the base points.

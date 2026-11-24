@@ -12,6 +12,5 @@
       "type": "factionapi:player_faction",
       "faction": "vampirismwitch:witch"
     }
-  },
-  "skill_point_tag": "vampirismwitch:witch"
+  }
 }
