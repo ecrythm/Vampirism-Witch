@@ -3,6 +3,7 @@ package com.vampirismwitch.block;
 import com.vampirismwitch.faction.WitchFactions;
 import de.teamlapen.faction.common.factions.FactionPlayerHandler;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.network.chat.Component;
@@ -57,7 +58,7 @@ public class WitchCauldronBlock extends Block {
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         // Blue water bubbles on the surface when the cauldron is heated.
         // No vanilla fire model is rendered above the logs.
-        if (state.getValue(LIT) && state.getValue(WATER) > 0 && random.nextInt(5) == 0) {
+        if (state.getValue(LIT) && state.getValue(WATER) > 0 && random.nextInt(4) == 0) {
             // Slightly rising bubbles just above the water surface.
             double waterY = switch (state.getValue(WATER)) {
                 case 1 -> 9.4 / 16.0;
@@ -78,6 +79,22 @@ public class WitchCauldronBlock extends Block {
             if (!level.isClientSide()) player.sendOverlayMessage(
                     Component.translatable("message.vampirismwitch.only_witches"));
             return InteractionResult.SUCCESS;
+        }
+
+        // Add one level using a plain vanilla water potion. No other potion is accepted.
+        // Full cauldrons are not changed and the water bottle is not consumed.
+        if (stack.is(Items.POTION)) {
+            PotionContents contents = stack.get(DataComponents.POTION_CONTENTS);
+            if (contents != null && contents.is(Potions.WATER)
+                    && state.getValue(WATER) < 3) {
+                if (!level.isClientSide()) {
+                    level.setBlock(pos, state.setValue(WATER, state.getValue(WATER) + 1)
+                            .setValue(BREWED, false), 3);
+                    replaceConsumed(player, hand, stack, new ItemStack(Items.GLASS_BOTTLE));
+                }
+                return InteractionResult.SUCCESS;
+            }
+            return InteractionResult.PASS;
         }
 
         if (stack.is(Items.WATER_BUCKET)) {

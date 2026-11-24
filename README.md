@@ -1,11 +1,21 @@
-# Vampirism: Witch v0.4.7
+# Vampirism: Witch v0.4.8
 
-NeoForge 26.1.2 / Minecraft 26.1.2 / Vampirism / FactionAPI
+Minecraft 26.1.2, NeoForge, Vampirism and FactionAPI.
 
-- Special cauldron water now uses the same vanilla water_still texture, translucency and biome water tint as vanilla water cauldrons.
-- Water shows only an upper face; a new underside face on the cauldron base closes the visible hole when looked at from below.
-- Glass bottles take water from the cauldron even before brewing. A full water bucket provides three bottle servings, each reducing the water level by one. Brewed water yields the existing night-vision test potion; plain water yields a water potion.
-- Heated water produces small upward-moving bubble-pop particles above the surface.
-- Other Witch features are unchanged.
+- Witch cauldron bubbles appear slightly more often when heated: chance increased from 1/5 to 1/4 per animation tick.
+- Fill the cauldron with ordinary **water potion bottles** (Minecraft water bottles) in increments of one water level each, up to three.
+- Each water potion used for filling produces an empty glass bottle. Other potion types are ignored.
+- Brewing state is reset when new water is poured in, so added water cannot inherit a finished potion.
+- Water buckets still fill the cauldron completely; drawing with empty bottles still reduces the level one at a time.
+- All other faction mechanics remain unchanged.
 
-GitHub Actions > green build > Artifacts > Vampirism-Witch-0.4.7.
+## Testing
+1. Become a level 1 Witch or higher.
+2. Use one Water Bottle on an empty Witch Cauldron: water becomes level 1 and the bottle becomes empty.
+3. Repeat twice to fill it to level 3.
+4. Take out three water bottles with empty glass bottles.
+5. Heat filled cauldron: bubbles are a little more frequent.
+
+## Download
+GitHub > Actions > latest green build > Artifacts > Vampirism-Witch-0.4.8.
+Remove older Witch jars from mods before installing.
