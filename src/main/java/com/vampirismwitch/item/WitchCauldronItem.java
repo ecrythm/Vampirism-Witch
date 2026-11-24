@@ -1,7 +1,7 @@
 package com.vampirismwitch.item;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.component.TooltipDisplay;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
