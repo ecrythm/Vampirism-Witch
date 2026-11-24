@@ -1,0 +1,45 @@
+{
+  "parent": "vampirismwitch:root",
+  "display": {
+    "icon": {
+      "id": "vampirismwitch:witch_hat"
+    },
+    "title": {
+      "translate": "advancement.vampirismwitch.root"
+    },
+    "description": {
+      "translate": "advancement.vampirismwitch.root.desc"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "task"
+  },
+  "criteria": {
+    "joined": {
+      "trigger": "factionapi:faction",
+      "conditions": {
+        "faction": "vampirismwitch:witch",
+        "level": 1
+      }
+    },
+    "already_a_witch": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "factionapi:player_faction",
+            "faction": "vampirismwitch:witch"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "joined",
+      "already_a_witch"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

@@ -63,10 +63,10 @@ public class WitchCauldronBlock extends Block {
                 default -> 13.6 / 16.0;
             };
             // More frequent small bubbles, but avoid overwhelming particle settings.
-            for (int i = 0; i < 2 + random.nextInt(2); i++) {
-                level.addParticle(ParticleTypes.BUBBLE_POP,
+            for (int i = 0; i < 1 + random.nextInt(2); i++) {
+                level.addParticle(ParticleTypes.SPLASH,
                         pos.getX() + 0.23 + random.nextDouble() * 0.54, y,
-                        pos.getZ() + 0.23 + random.nextDouble() * 0.54, 0, 0.025, 0);
+                        pos.getZ() + 0.23 + random.nextDouble() * 0.54, 0, 0.012, 0);
             }
         }
     }

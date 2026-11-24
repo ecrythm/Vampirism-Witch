@@ -1,13 +1,14 @@
-# Vampirism: Witch 0.4.3
+# Vampirism: Witch v0.4.5
 
-Minecraft 26.1.2 / NeoForge / Vampirism / FactionAPI
+Minecraft 26.1.2 / NeoForge / Vampirism / FactionAPI.
 
-## Changes
-- Semi-transparent light blue water texture, applied at levels 1–3 with a translucent render type.
-- More visible surface bubbles while brewing.
-- Small flame visible underneath the bowl only while heated; no fire inside the bowl.
-- First-person cauldron item reduced to 40% scale, rotated by 45°, and raised slightly. GUI item preview slightly smaller.
-- Witch cauldron item now shows Faction Specifics / Witch / Required Level: 1 on hover.
-- Witch tab advancement cleanup: removed the redundant root explanatory achievement and kept one real Become a Witch advancement.
+## Fixes
+- The cauldron now uses vanilla water texture with translucent rendering and water tint, instead of a custom opaque-looking blue surface.
+- Heated cauldron produces fewer, smaller vanilla splash particles rather than a constant cloud of bubble-pop particles.
+- Fire under the bowl is wider while lit.
+- The Witch advancements tab is titled **Witch**.
+- The achievement **This is only the begging!** / **Become a witch** is now a separate child under the Witch tab. It checks the Witch faction both on joining and every tick, so it will be awarded to existing witches on reload and stay recorded in the world's advancement data.
 
-The ingredient and level requirements are unchanged. Game appearance needs in-game verification.
+### Install
+Go to GitHub Actions > latest successful build > Artifacts > Vampirism-Witch-0.4.5.
+Remove prior Witch JAR before installing. If on LAN or multiplayer, update both client and server.

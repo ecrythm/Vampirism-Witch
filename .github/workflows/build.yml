@@ -23,21 +23,24 @@ jobs:
         run: gradle clean build --stacktrace
       - name: Verify compiled mod
         run: |
-          jar tf build/libs/vampirismwitch-0.4.4.jar | grep 'WitchCauldronBlock.class'
-          jar tf build/libs/vampirismwitch-0.4.4.jar | grep 'WitchMobPeace.class'
-          jar tf build/libs/vampirismwitch-0.4.4.jar | grep 'WitchSkills.class'
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'WitchCauldronBlock.class'
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'WitchMobPeace.class'
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'WitchSkills.class'
       - name: Verify skill texture and advancement
         run: |
-          jar tf build/libs/vampirismwitch-0.4.4.jar | grep 'assets/vampirismwitch/textures/skills/cauldron_mastery.png'
-          jar tf build/libs/vampirismwitch-0.4.4.jar | grep 'data/vampirismwitch/advancement/root.json'
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'assets/vampirismwitch/textures/skills/cauldron_mastery.png'
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'data/vampirismwitch/advancement/root.json'
       - name: Check advancement and model assets
         run: |
-          jar tf build/libs/vampirismwitch-0.4.4.jar | grep 'data/vampirismwitch/advancement/root.json'
-          jar tf build/libs/vampirismwitch-0.4.4.jar | grep 'assets/vampirismwitch/textures/skills/cauldron_mastery.png'
-          jar tf build/libs/vampirismwitch-0.4.4.jar | grep 'assets/vampirismwitch/models/block/witch_cauldron_base.json'
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'data/vampirismwitch/advancement/root.json'
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'assets/vampirismwitch/textures/skills/cauldron_mastery.png'
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'assets/vampirismwitch/models/block/witch_cauldron_base.json'
+      - name: Verify Witch advancement assets
+        run: |
+          jar tf build/libs/vampirismwitch-0.4.5.jar | grep 'data/vampirismwitch/advancement/become_witch.json'
       - name: Upload test JAR
         uses: actions/upload-artifact@v4
         with:
-          name: Vampirism-Witch-0.4.4
-          path: build/libs/vampirismwitch-0.4.4.jar
+          name: Vampirism-Witch-0.4.5
+          path: build/libs/vampirismwitch-0.4.5.jar
           if-no-files-found: error
