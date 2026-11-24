@@ -26,7 +26,7 @@ public final class WitchSkillPoints {
     static {
         PROVIDERS.register("witch_leveling", () -> (factionPlayer, tree) ->
                 tree.unwrapKey().filter(WITCH_TREE::equals).isPresent()
-                        && factionPlayer.getFaction().is(WitchFactions.WITCH)
+                        && WitchFactions.WITCH.match(factionPlayer.getFaction())
                         ? Math.max(0, factionPlayer.getLevel()) * 2 : 0);
     }
 
