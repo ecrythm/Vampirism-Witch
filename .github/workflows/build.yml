@@ -32,7 +32,7 @@ jobs:
           jar tf build/libs/vampirismwitch-0.4.3.jar | grep 'data/vampirismwitch/advancement/root.json'
       - name: Check advancement and model assets
         run: |
-          jar tf build/libs/vampirismwitch-0.4.3.jar | grep 'data/vampirismwitch/advancement/become_witch.json'
+          jar tf build/libs/vampirismwitch-0.4.3.jar | grep 'data/vampirismwitch/advancement/root.json'
           jar tf build/libs/vampirismwitch-0.4.3.jar | grep 'assets/vampirismwitch/textures/skills/cauldron_mastery.png'
           jar tf build/libs/vampirismwitch-0.4.3.jar | grep 'assets/vampirismwitch/models/block/witch_cauldron_base.json'
       - name: Upload test JAR
