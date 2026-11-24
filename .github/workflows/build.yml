@@ -23,16 +23,21 @@ jobs:
         run: gradle clean build --stacktrace
       - name: Verify compiled mod
         run: |
-          jar tf build/libs/vampirismwitch-0.4.1.jar | grep 'WitchCauldronBlock.class'
-          jar tf build/libs/vampirismwitch-0.4.1.jar | grep 'WitchMobPeace.class'
-          jar tf build/libs/vampirismwitch-0.4.1.jar | grep 'WitchSkills.class'
+          jar tf build/libs/vampirismwitch-0.4.2.jar | grep 'WitchCauldronBlock.class'
+          jar tf build/libs/vampirismwitch-0.4.2.jar | grep 'WitchMobPeace.class'
+          jar tf build/libs/vampirismwitch-0.4.2.jar | grep 'WitchSkills.class'
       - name: Verify skill texture and advancement
         run: |
-          jar tf build/libs/vampirismwitch-0.4.1.jar | grep 'assets/vampirismwitch/textures/skills/cauldron_mastery.png'
-          jar tf build/libs/vampirismwitch-0.4.1.jar | grep 'data/vampirismwitch/advancement/root.json'
+          jar tf build/libs/vampirismwitch-0.4.2.jar | grep 'assets/vampirismwitch/textures/skills/cauldron_mastery.png'
+          jar tf build/libs/vampirismwitch-0.4.2.jar | grep 'data/vampirismwitch/advancement/root.json'
+      - name: Check advancement and model assets
+        run: |
+          jar tf build/libs/vampirismwitch-0.4.2.jar | grep 'data/vampirismwitch/advancement/become_witch.json'
+          jar tf build/libs/vampirismwitch-0.4.2.jar | grep 'assets/vampirismwitch/textures/skills/cauldron_mastery.png'
+          jar tf build/libs/vampirismwitch-0.4.2.jar | grep 'assets/vampirismwitch/models/block/witch_cauldron_base.json'
       - name: Upload test JAR
         uses: actions/upload-artifact@v4
         with:
-          name: Vampirism-Witch-0.4.1
-          path: build/libs/vampirismwitch-0.4.1.jar
+          name: Vampirism-Witch-0.4.2
+          path: build/libs/vampirismwitch-0.4.2.jar
           if-no-files-found: error

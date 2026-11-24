@@ -2,20 +2,20 @@
   "ambientocclusion": false,
   "textures": {
     "particle": "minecraft:block/cauldron_side",
-    "side": "minecraft:block/cauldron_side",
-    "top": "minecraft:block/cauldron_top",
+    "wall": "minecraft:block/cauldron_side",
+    "rim": "minecraft:block/cauldron_top",
     "inner": "minecraft:block/cauldron_inner"
   },
   "elements": [
     {
       "from": [
         2,
-        6,
+        7,
         2
       ],
       "to": [
         14,
-        7,
+        8,
         14
       ],
       "faces": {
@@ -30,7 +30,7 @@
     {
       "from": [
         0,
-        7,
+        8,
         0
       ],
       "to": [
@@ -40,29 +40,26 @@
       ],
       "faces": {
         "north": {
-          "texture": "#side"
+          "texture": "#wall"
         },
         "south": {
-          "texture": "#side"
+          "texture": "#wall"
+        },
+        "west": {
+          "texture": "#wall"
         },
         "east": {
           "texture": "#inner"
         },
-        "west": {
-          "texture": "#side"
-        },
         "up": {
-          "texture": "#top"
-        },
-        "down": {
-          "texture": "#inner"
+          "texture": "#rim"
         }
       }
     },
     {
       "from": [
         14,
-        7,
+        8,
         0
       ],
       "to": [
@@ -72,29 +69,26 @@
       ],
       "faces": {
         "north": {
-          "texture": "#side"
+          "texture": "#wall"
         },
         "south": {
-          "texture": "#side"
+          "texture": "#wall"
         },
         "east": {
-          "texture": "#side"
+          "texture": "#wall"
         },
         "west": {
           "texture": "#inner"
         },
         "up": {
-          "texture": "#top"
-        },
-        "down": {
-          "texture": "#inner"
+          "texture": "#rim"
         }
       }
     },
     {
       "from": [
         2,
-        7,
+        8,
         0
       ],
       "to": [
@@ -104,29 +98,20 @@
       ],
       "faces": {
         "north": {
-          "texture": "#side"
+          "texture": "#wall"
         },
         "south": {
           "texture": "#inner"
         },
-        "east": {
-          "texture": "#side"
-        },
-        "west": {
-          "texture": "#side"
-        },
         "up": {
-          "texture": "#top"
-        },
-        "down": {
-          "texture": "#inner"
+          "texture": "#rim"
         }
       }
     },
     {
       "from": [
         2,
-        7,
+        8,
         14
       ],
       "to": [
@@ -139,19 +124,10 @@
           "texture": "#inner"
         },
         "south": {
-          "texture": "#side"
-        },
-        "east": {
-          "texture": "#side"
-        },
-        "west": {
-          "texture": "#side"
+          "texture": "#wall"
         },
         "up": {
-          "texture": "#top"
-        },
-        "down": {
-          "texture": "#inner"
+          "texture": "#rim"
         }
       }
     }
@@ -163,15 +139,10 @@
         225,
         0
       ],
-      "translation": [
-        0,
-        0,
-        0
-      ],
       "scale": [
-        0.78,
-        0.78,
-        0.78
+        0.75,
+        0.75,
+        0.75
       ]
     }
   }

@@ -3,6 +3,8 @@ package com.vampirismwitch.block;
 import com.vampirismwitch.faction.WitchFactions;
 import de.teamlapen.faction.common.factions.FactionPlayerHandler;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.RandomSource;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -48,6 +50,22 @@ public class WitchCauldronBlock extends Block {
 
     @Override protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
+    }
+
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        // Blue water bubbles on the surface when the cauldron is heated.
+        // No vanilla fire model is rendered above the logs.
+        if (state.getValue(LIT) && state.getValue(WATER) > 0 && random.nextInt(4) == 0) {
+            double y = pos.getY() + switch (state.getValue(WATER)) {
+                case 1 -> 9.8 / 16.0;
+                case 2 -> 11.7 / 16.0;
+                default -> 13.6 / 16.0;
+            };
+            level.addParticle(ParticleTypes.BUBBLE_POP,
+                    pos.getX() + 0.25 + random.nextDouble() * 0.5, y,
+                    pos.getZ() + 0.25 + random.nextDouble() * 0.5, 0, 0.025, 0);
+        }
     }
 
     @Override protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level,

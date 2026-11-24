@@ -1,19 +1,20 @@
 {
+  "ambientocclusion": false,
   "textures": {
-    "particle": "minecraft:block/water_still",
-    "surface": "minecraft:block/water_still"
+    "particle": "minecraft:block/blue_concrete",
+    "surface": "minecraft:block/blue_concrete"
   },
   "elements": [
     {
       "from": [
-        2,
-        11,
-        2
+        2.1,
+        11.3,
+        2.1
       ],
       "to": [
-        14,
-        11.2,
-        14
+        13.9,
+        11.450000000000001,
+        13.9
       ],
       "faces": {
         "up": {

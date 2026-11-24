@@ -9,12 +9,14 @@
   "gui.vampirismwitch.lord_level": "Lord Level %s",
   "gui.vampirismwitch.archmage": "Archmage",
   "command.vampirismwitch.archmage.success": "%s is now an Archmage",
-  "skill.vampirismwitch.cauldron_mastery": "Witch Brewing",
+  "skill.vampirismwitch.cauldron_mastery": "Becoming a Witch",
   "skill.vampirismwitch.cauldron_mastery.desc": "You're now a witch! You can use the witch's cauldron now!",
   "gui.vampirismwitch.skills": "Witch Skills",
   "message.vampirismwitch.only_witches": "Only level 1+ witches can use this cauldron",
   "message.vampirismwitch.heating": "The cauldron is heating up",
   "message.vampirismwitch.brew_ready": "Night brew is ready! Use a glass bottle",
   "advancement.vampirismwitch.root": "This is only the begging!",
-  "advancement.vampirismwitch.root.desc": "Become a witch"
+  "advancement.vampirismwitch.root.desc": "Become a witch",
+  "advancement.vampirismwitch.tab": "Witch",
+  "advancement.vampirismwitch.tab.desc": "Witchcraft achievements"
 }

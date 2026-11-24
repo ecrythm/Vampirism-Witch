@@ -2,29 +2,17 @@
   "multipart": [
     {
       "apply": {
+        "model": "minecraft:block/campfire_off"
+      }
+    },
+    {
+      "apply": {
         "model": "vampirismwitch:block/witch_cauldron_base"
       }
     },
     {
       "when": {
-        "lit": "false"
-      },
-      "apply": {
-        "model": "minecraft:block/campfire_off"
-      }
-    },
-    {
-      "when": {
-        "lit": "true"
-      },
-      "apply": {
-        "model": "minecraft:block/campfire"
-      }
-    },
-    {
-      "when": {
-        "water": "1",
-        "brewed": "false"
+        "water": "1"
       },
       "apply": {
         "model": "vampirismwitch:block/witch_cauldron_water_1"
@@ -32,17 +20,7 @@
     },
     {
       "when": {
-        "water": "1",
-        "brewed": "true"
-      },
-      "apply": {
-        "model": "vampirismwitch:block/witch_cauldron_brew_1"
-      }
-    },
-    {
-      "when": {
-        "water": "2",
-        "brewed": "false"
+        "water": "2"
       },
       "apply": {
         "model": "vampirismwitch:block/witch_cauldron_water_2"
@@ -50,29 +28,10 @@
     },
     {
       "when": {
-        "water": "2",
-        "brewed": "true"
-      },
-      "apply": {
-        "model": "vampirismwitch:block/witch_cauldron_brew_2"
-      }
-    },
-    {
-      "when": {
-        "water": "3",
-        "brewed": "false"
+        "water": "3"
       },
       "apply": {
         "model": "vampirismwitch:block/witch_cauldron_water_3"
-      }
-    },
-    {
-      "when": {
-        "water": "3",
-        "brewed": "true"
-      },
-      "apply": {
-        "model": "vampirismwitch:block/witch_cauldron_brew_3"
       }
     }
   ]

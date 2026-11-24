@@ -9,12 +9,14 @@
   "gui.vampirismwitch.lord_level": "Уровень лорда %s",
   "gui.vampirismwitch.archmage": "Архимаг",
   "command.vampirismwitch.archmage.success": "%s получил ранг Архимага",
-  "skill.vampirismwitch.cauldron_mastery": "Ведьмовское зельеварение",
+  "skill.vampirismwitch.cauldron_mastery": "Становление ведьмой",
   "skill.vampirismwitch.cauldron_mastery.desc": "Теперь ты ведьма! Ты можешь использовать ведьмовской котёл!",
   "gui.vampirismwitch.skills": "Навыки ведьмы",
   "message.vampirismwitch.only_witches": "Котёл доступен только ведьмам с 1 уровня",
   "message.vampirismwitch.heating": "Котёл нагревается",
   "message.vampirismwitch.brew_ready": "Ночной отвар готов! Используй стеклянную бутылочку",
   "advancement.vampirismwitch.root": "Это только начало!",
-  "advancement.vampirismwitch.root.desc": "Стань ведьмой"
+  "advancement.vampirismwitch.root.desc": "Стань ведьмой",
+  "advancement.vampirismwitch.tab": "Witch",
+  "advancement.vampirismwitch.tab.desc": "Достижения ведьм"
 }
