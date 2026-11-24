@@ -1,0 +1,9 @@
+{
+  "parents": [
+    "vampirismwitch:witch/cauldron_mastery"
+  ],
+  "skills": [
+    "vampirismwitch:potion_resistance"
+  ],
+  "tree": "vampirismwitch:witch/level"
+}

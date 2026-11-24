@@ -10,6 +10,8 @@ import de.teamlapen.faction.common.factions.skills.SkillHandler;
 import de.teamlapen.faction.common.util.AttachmentSynchronization;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import org.jetbrains.annotations.Nullable;
@@ -32,6 +34,16 @@ public class WitchPlayer extends FactionBasePlayer<IWitchPlayer> implements IWit
     @Override public void onUpdate() {
         if (getLevel() > 0) {
             actions.updateActions();
+            // Remove only harmful status effects while Potion Resistance is unlocked.
+            // Positive and neutral effects remain untouched.
+            if (!isRemote() && skills.isSkillEnabled(WitchSkills.POTION_RESISTANCE)
+                    && player.tickCount % 2 == 0) {
+                for (MobEffectInstance effect : java.util.List.copyOf(player.getActiveEffects())) {
+                    if (effect.getEffect().value().getCategory() == MobEffectCategory.HARMFUL) {
+                        player.removeEffect(effect.getEffect());
+                    }
+                }
+            }
             // Keep the free first skill enabled after level changes and reloads.
             // FactionAPI will only enable skills once their tree is unlocked.
             if (!isRemote() && !skills.isSkillEnabled(WitchSkills.CAULDRON_MASTERY)) {

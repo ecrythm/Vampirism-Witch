@@ -21,5 +21,7 @@
   "advancement.vampirismwitch.tab.desc": "",
   "tooltip.vampirismwitch.faction_specifics": "Требования фракции:",
   "tooltip.vampirismwitch.witch": "Ведьма",
-  "tooltip.vampirismwitch.required_level": "Необходимый уровень: 1"
+  "tooltip.vampirismwitch.required_level": "Необходимый уровень: 1",
+  "skill.vampirismwitch.potion_resistance": "Сопротивление зельям",
+  "skill.vampirismwitch.potion_resistance.desc": "Автоматически снимает отрицательные эффекты зелий, сохраняя положительные."
 }

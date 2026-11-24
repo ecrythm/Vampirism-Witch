@@ -5,6 +5,7 @@ import com.vampirismwitch.block.WitchCauldronBlock;
 import com.vampirismwitch.faction.WitchAttachments;
 import com.vampirismwitch.faction.WitchFactions;
 import com.vampirismwitch.faction.WitchSkills;
+import com.vampirismwitch.faction.WitchSkillPoints;
 import de.teamlapen.faction.common.event.PlayerEventHandlerEvent;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -58,8 +59,9 @@ public class VampirismWitch {
         WitchAttachments.ATTACHMENT_TYPES.register(modBus);
         WitchFactions.register(modBus);
         WitchSkills.register(modBus);
+        WitchSkillPoints.register(modBus);
         modBus.addListener(PlayerEventHandlerEvent.class,
                 event -> event.addAttachmentListener(WitchAttachments.WITCH_PLAYER));
-        LOGGER.info("Vampirism: Witch 0.4.4 initialized");
+        LOGGER.info("Vampirism: Witch 0.5.0 initialized");
     }
 }

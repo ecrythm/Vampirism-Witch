@@ -29,6 +29,12 @@ public final class WitchSkills {
                     new Skill<>(properties.cost(0).withDescription()
                             .tree(LEVEL_TREE).factions(ONLY_WITCHES)));
 
+    // Purchasable skill available after the free Becoming a Witch root.
+    public static final DeferredSkill<IWitchPlayer, ISkill<IWitchPlayer>> POTION_RESISTANCE =
+            SKILLS.registerSkill("potion_resistance", properties ->
+                    new Skill<>(properties.cost(1).withDescription()
+                            .tree(LEVEL_TREE).factions(ONLY_WITCHES)));
+
     public static void register(IEventBus modBus) {
         SKILLS.register(modBus);
     }

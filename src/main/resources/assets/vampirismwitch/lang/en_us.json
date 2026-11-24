@@ -21,5 +21,7 @@
   "advancement.vampirismwitch.tab.desc": "",
   "tooltip.vampirismwitch.faction_specifics": "Faction Specifics:",
   "tooltip.vampirismwitch.witch": "Witch",
-  "tooltip.vampirismwitch.required_level": "Required Level: 1"
+  "tooltip.vampirismwitch.required_level": "Required Level: 1",
+  "skill.vampirismwitch.potion_resistance": "Potion Resistance",
+  "skill.vampirismwitch.potion_resistance.desc": "Automatically removes harmful potion effects while keeping beneficial effects."
 }
