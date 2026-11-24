@@ -2,8 +2,8 @@
   "render_type": "minecraft:translucent",
   "ambientocclusion": false,
   "textures": {
-    "particle": "minecraft:block/water_still",
-    "surface": "minecraft:block/water_still"
+    "particle": "vampirismwitch:block/witch_cauldron_water",
+    "surface": "vampirismwitch:block/witch_cauldron_water"
   },
   "elements": [
     {
@@ -19,12 +19,7 @@
       ],
       "faces": {
         "up": {
-          "texture": "#surface",
-          "tintindex": 0
-        },
-        "down": {
-          "texture": "#surface",
-          "tintindex": 0
+          "texture": "#surface"
         }
       }
     }

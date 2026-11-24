@@ -1,14 +1,17 @@
-# Vampirism: Witch v0.4.5
+# Vampirism: Witch v0.4.6
 
 Minecraft 26.1.2 / NeoForge / Vampirism / FactionAPI.
 
-## Fixes
-- The cauldron now uses vanilla water texture with translucent rendering and water tint, instead of a custom opaque-looking blue surface.
-- Heated cauldron produces fewer, smaller vanilla splash particles rather than a constant cloud of bubble-pop particles.
-- Fire under the bowl is wider while lit.
-- The Witch advancements tab is titled **Witch**.
-- The achievement **This is only the begging!** / **Become a witch** is now a separate child under the Witch tab. It checks the Witch faction both on joining and every tick, so it will be awarded to existing witches on reload and stay recorded in the world's advancement data.
+### Changes
+- Light-blue semi-transparent custom water texture; no missing block tint producing grey water.
+- Soul-sand-like BUBBLE_COLUMN_UP particles, approximately one every five client animation ticks while heated.
+- Hollow cauldron collision: solid bottom and four narrow walls, with an open middle for players and dropped items.
+- Water remains a visual layer, not an actual Minecraft fluid block. It can still be filled with the water bucket for brewing.
+- Existing recipe, Archmage system, skills, and advancements are preserved.
 
-### Install
-Go to GitHub Actions > latest successful build > Artifacts > Vampirism-Witch-0.4.5.
-Remove prior Witch JAR before installing. If on LAN or multiplayer, update both client and server.
+### Why the extra Witch tile appears in Advancements
+Vanilla Minecraft needs a root advancement to show a separate **Witch** tab. The root named **Witch** is therefore displayed as the tab's first tile, and **This is only the begging!** is the actual faction-joining achievement. Removing the root tile entirely would also remove the Witch advancement tab without a custom screen.
+
+### Download
+Actions > latest successful build > Artifacts > Vampirism-Witch-0.4.6.
+Remove the old JAR from mods before installing.

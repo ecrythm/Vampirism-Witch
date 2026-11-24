@@ -30,13 +30,14 @@ public class WitchCauldronBlock extends Block {
     public static final IntegerProperty WATER = IntegerProperty.create("water", 0, 3);
     public static final BooleanProperty LIT = BooleanProperty.create("lit");
     public static final BooleanProperty BREWED = BooleanProperty.create("brewed");
+    // A hollow 12x12-pixel opening. Only the bottom and four walls collide;
+    // water is a visual surface and never blocks players or dropped items.
     private static final VoxelShape SHAPE = Shapes.or(
             Block.box(0, 0, 0, 16, 7, 16),
-            Block.box(1, 7, 1, 15, 20, 3),
-            Block.box(1, 7, 13, 15, 20, 15),
-            Block.box(1, 7, 3, 3, 20, 13),
-            Block.box(13, 7, 3, 15, 20, 13),
-            Block.box(1, 7, 1, 15, 9, 15));
+            Block.box(0, 7, 0, 2, 16, 16),
+            Block.box(14, 7, 0, 16, 16, 16),
+            Block.box(2, 7, 0, 14, 16, 2),
+            Block.box(2, 7, 14, 14, 16, 16));
 
     public WitchCauldronBlock(BlockBehaviour.Properties properties) {
         super(properties);
@@ -56,18 +57,18 @@ public class WitchCauldronBlock extends Block {
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         // Blue water bubbles on the surface when the cauldron is heated.
         // No vanilla fire model is rendered above the logs.
-        if (state.getValue(LIT) && state.getValue(WATER) > 0) {
-            double y = pos.getY() + switch (state.getValue(WATER)) {
-                case 1 -> 9.8 / 16.0;
-                case 2 -> 11.7 / 16.0;
-                default -> 13.6 / 16.0;
+        if (state.getValue(LIT) && state.getValue(WATER) > 0 && random.nextInt(5) == 0) {
+            // Soul-sand-style bubbles emerging from below the water surface.
+            double waterY = switch (state.getValue(WATER)) {
+                case 1 -> 9.4 / 16.0;
+                case 2 -> 11.3 / 16.0;
+                default -> 13.2 / 16.0;
             };
-            // More frequent small bubbles, but avoid overwhelming particle settings.
-            for (int i = 0; i < 1 + random.nextInt(2); i++) {
-                level.addParticle(ParticleTypes.SPLASH,
-                        pos.getX() + 0.23 + random.nextDouble() * 0.54, y,
-                        pos.getZ() + 0.23 + random.nextDouble() * 0.54, 0, 0.012, 0);
-            }
+            level.addParticle(ParticleTypes.BUBBLE_COLUMN_UP,
+                    pos.getX() + 0.25 + random.nextDouble() * 0.5,
+                    pos.getY() + waterY - 0.08,
+                    pos.getZ() + 0.25 + random.nextDouble() * 0.5,
+                    0, 0.02, 0);
         }
     }
 
