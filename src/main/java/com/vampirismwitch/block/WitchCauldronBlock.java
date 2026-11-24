@@ -54,8 +54,8 @@ public class WitchCauldronBlock extends Block {
                                                        BlockPos pos, Player player, InteractionHand hand,
                                                        BlockHitResult hit) {
         if (FactionPlayerHandler.get(player).getCurrentLevel(WitchFactions.WITCH) < 1) {
-            if (!level.isClientSide()) player.displayClientMessage(
-                    Component.translatable("message.vampirismwitch.only_witches"), true);
+            if (!level.isClientSide()) player.sendOverlayMessage(
+                    Component.translatable("message.vampirismwitch.only_witches"));
             return InteractionResult.SUCCESS;
         }
 
@@ -77,7 +77,7 @@ public class WitchCauldronBlock extends Block {
         if (stack.is(Items.FLINT_AND_STEEL) && !state.getValue(LIT) && state.getValue(WATER) > 0) {
             if (!level.isClientSide()) {
                 level.setBlock(pos, state.setValue(LIT, true), 3);
-                player.displayClientMessage(Component.translatable("message.vampirismwitch.heating"), true);
+                player.sendOverlayMessage(Component.translatable("message.vampirismwitch.heating"));
             }
             return InteractionResult.SUCCESS;
         }
@@ -86,7 +86,7 @@ public class WitchCauldronBlock extends Block {
             if (!level.isClientSide()) {
                 level.setBlock(pos, state.setValue(BREWED, true), 3);
                 if (!player.getAbilities().instabuild) stack.shrink(1);
-                player.displayClientMessage(Component.translatable("message.vampirismwitch.brew_ready"), true);
+                player.sendOverlayMessage(Component.translatable("message.vampirismwitch.brew_ready"));
             }
             return InteractionResult.SUCCESS;
         }
@@ -101,8 +101,8 @@ public class WitchCauldronBlock extends Block {
             return InteractionResult.SUCCESS;
         }
 
-        if (!level.isClientSide()) player.displayClientMessage(
-                Component.translatable("message.vampirismwitch.instructions"), true);
+        if (!level.isClientSide()) player.sendOverlayMessage(
+                Component.translatable("message.vampirismwitch.instructions"));
         return InteractionResult.SUCCESS;
     }
 
