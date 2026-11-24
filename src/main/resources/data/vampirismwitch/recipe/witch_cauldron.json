@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "C",
+    "F"
+  ],
+  "key": {
+    "C": "minecraft:cauldron",
+    "F": "minecraft:campfire"
+  },
+  "result": {
+    "id": "vampirismwitch:witch_cauldron",
+    "count": 1
+  }
+}

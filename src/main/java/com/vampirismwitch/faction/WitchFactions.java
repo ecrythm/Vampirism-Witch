@@ -9,8 +9,8 @@ import net.minecraft.network.chat.TextColor;
 import net.neoforged.bus.api.IEventBus;
 
 public class WitchFactions {
-    // Dark purple-black, shared by the faction nickname and HUD indicator.
-    public static final int WITCH_COLOR = 0x2B192F;
+    // Used for the Witch name in FactionAPI and for its HUD text.
+    public static final int WITCH_COLOR = 0x74517F;
     private static final DeferredFactionRegister FACTIONS =
             DeferredFactionRegister.create(VampirismWitch.MOD_ID);
 

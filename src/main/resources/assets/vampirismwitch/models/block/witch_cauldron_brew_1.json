@@ -1,0 +1,40 @@
+{
+  "textures": {
+    "particle": "minecraft:block/purple_stained_glass",
+    "surface": "minecraft:block/purple_stained_glass"
+  },
+  "elements": [
+    {
+      "from": [
+        3,
+        11,
+        3
+      ],
+      "to": [
+        13,
+        11.25,
+        13
+      ],
+      "faces": {
+        "north": {
+          "texture": "#surface"
+        },
+        "south": {
+          "texture": "#surface"
+        },
+        "east": {
+          "texture": "#surface"
+        },
+        "west": {
+          "texture": "#surface"
+        },
+        "up": {
+          "texture": "#surface"
+        },
+        "down": {
+          "texture": "#surface"
+        }
+      }
+    }
+  ]
+}

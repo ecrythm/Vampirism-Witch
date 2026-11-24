@@ -1,11 +1,19 @@
 {
   "itemGroup.vampirismwitch": "Vampirism: Witch",
   "item.vampirismwitch.witch_hat": "Ведьмовская шляпа",
+  "block.vampirismwitch.witch_cauldron": "Ведьмовской котёл",
+  "item.vampirismwitch.witch_cauldron": "Ведьмовской котёл",
   "faction.vampirismwitch.witch": "Ведьмы",
   "faction.vampirismwitch.witch.singular": "Ведьма",
   "faction.vampirismwitch.witch.plural": "Ведьмы",
   "gui.vampirismwitch.lord_level": "Уровень лорда %s",
   "gui.vampirismwitch.archmage": "Архимаг",
   "command.vampirismwitch.archmage.success": "%s получил ранг Архимага",
-  "command.vampirismwitch.archmage.removed": "Ранг Архимага снят"
+  "skill.vampirismwitch.cauldron_mastery": "Ведьмовское зельеварение",
+  "skill.vampirismwitch.cauldron_mastery.desc": "Первый навык ведьмы. Позволяет пользоваться особым котлом.",
+  "gui.vampirismwitch.skills": "Навыки ведьмы",
+  "message.vampirismwitch.only_witches": "Котёл доступен только ведьмам с 1 уровня",
+  "message.vampirismwitch.heating": "Котёл нагревается",
+  "message.vampirismwitch.brew_ready": "Ночной отвар готов! Используй стеклянную бутылочку",
+  "message.vampirismwitch.instructions": "Налей воду из ведра, подожги огнивом, добавь светящиеся ягоды и возьми зелье бутылочкой"
 }

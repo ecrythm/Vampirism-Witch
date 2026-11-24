@@ -1,11 +1,19 @@
 {
   "itemGroup.vampirismwitch": "Vampirism: Witch",
   "item.vampirismwitch.witch_hat": "Witch Hat",
+  "block.vampirismwitch.witch_cauldron": "Witch's Cauldron",
+  "item.vampirismwitch.witch_cauldron": "Witch's Cauldron",
   "faction.vampirismwitch.witch": "Witch",
   "faction.vampirismwitch.witch.singular": "Witch",
   "faction.vampirismwitch.witch.plural": "Witches",
   "gui.vampirismwitch.lord_level": "Lord Level %s",
   "gui.vampirismwitch.archmage": "Archmage",
   "command.vampirismwitch.archmage.success": "%s is now an Archmage",
-  "command.vampirismwitch.archmage.removed": "Archmage rank removed"
+  "skill.vampirismwitch.cauldron_mastery": "Witch Brewing",
+  "skill.vampirismwitch.cauldron_mastery.desc": "Your first Witch skill. Allows you to operate the special cauldron.",
+  "gui.vampirismwitch.skills": "Witch Skills",
+  "message.vampirismwitch.only_witches": "Only level 1+ witches can use this cauldron",
+  "message.vampirismwitch.heating": "The cauldron is heating up",
+  "message.vampirismwitch.brew_ready": "Night brew is ready! Use a glass bottle",
+  "message.vampirismwitch.instructions": "Fill with water, light with flint and steel, add glow berries, then bottle the brew"
 }
