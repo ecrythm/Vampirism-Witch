@@ -58,17 +58,16 @@ public class WitchCauldronBlock extends Block {
         // Blue water bubbles on the surface when the cauldron is heated.
         // No vanilla fire model is rendered above the logs.
         if (state.getValue(LIT) && state.getValue(WATER) > 0 && random.nextInt(5) == 0) {
-            // Soul-sand-style bubbles emerging from below the water surface.
+            // Slightly rising bubbles just above the water surface.
             double waterY = switch (state.getValue(WATER)) {
                 case 1 -> 9.4 / 16.0;
                 case 2 -> 11.3 / 16.0;
                 default -> 13.2 / 16.0;
             };
-            level.addParticle(ParticleTypes.BUBBLE_COLUMN_UP,
-                    pos.getX() + 0.25 + random.nextDouble() * 0.5,
-                    pos.getY() + waterY - 0.08,
-                    pos.getZ() + 0.25 + random.nextDouble() * 0.5,
-                    0, 0.02, 0);
+            double x = pos.getX() + 0.25 + random.nextDouble() * 0.5;
+            double z = pos.getZ() + 0.25 + random.nextDouble() * 0.5;
+            level.addParticle(ParticleTypes.BUBBLE_POP, x, pos.getY() + waterY + 0.03,
+                    z, 0, 0.06, 0);
         }
     }
 
@@ -112,13 +111,15 @@ public class WitchCauldronBlock extends Block {
             }
             return InteractionResult.SUCCESS;
         }
-        if (stack.is(Items.GLASS_BOTTLE) && state.getValue(BREWED) && state.getValue(WATER) > 0) {
+        if (stack.is(Items.GLASS_BOTTLE) && state.getValue(WATER) > 0) {
             if (!level.isClientSide()) {
                 int remaining = state.getValue(WATER) - 1;
-                level.setBlock(pos, state.setValue(WATER, remaining).setValue(BREWED, remaining > 0)
+                level.setBlock(pos, state.setValue(WATER, remaining)
+                        .setValue(BREWED, remaining > 0 && state.getValue(BREWED))
                         .setValue(LIT, remaining > 0 && state.getValue(LIT)), 3);
                 replaceConsumed(player, hand, stack,
-                        PotionContents.createItemStack(Items.POTION, Potions.NIGHT_VISION));
+                        PotionContents.createItemStack(Items.POTION,
+                                state.getValue(BREWED) ? Potions.NIGHT_VISION : Potions.WATER));
             }
             return InteractionResult.SUCCESS;
         }

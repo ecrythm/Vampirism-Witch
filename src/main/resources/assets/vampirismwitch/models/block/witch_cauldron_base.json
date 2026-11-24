@@ -4,9 +4,27 @@
     "particle": "minecraft:block/cauldron_side",
     "wall": "minecraft:block/cauldron_side",
     "rim": "minecraft:block/cauldron_top",
-    "inner": "minecraft:block/cauldron_inner"
+    "inner": "minecraft:block/cauldron_inner",
+    "underside": "minecraft:block/campfire_log"
   },
   "elements": [
+    {
+      "from": [
+        0,
+        0.25,
+        0
+      ],
+      "to": [
+        16,
+        0.5,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#underside"
+        }
+      }
+    },
     {
       "from": [
         2,
