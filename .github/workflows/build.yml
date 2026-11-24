@@ -44,7 +44,7 @@ jobs:
           jar tf build/libs/vampirismwitch-0.5.3.jar | grep 'data/vampirismwitch/factionapi/skill_segment/witch/potion_resistance.json'
       - name: Verify skill points tag and potion protection
         run: |
-          jar tf build/libs/vampirismwitch-0.5.3.jar | grep 'tags/factionapi/skill_tree/witch.json'
+          jar tf build/libs/vampirismwitch-0.5.3.jar | grep 'WitchSkillPoints.class'
           jar tf build/libs/vampirismwitch-0.5.3.jar | grep 'WitchPotionResistance.class'
       - name: Validate default skill point configuration
         run: |
