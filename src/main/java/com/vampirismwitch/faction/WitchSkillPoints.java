@@ -27,7 +27,14 @@ public final class WitchSkillPoints {
         PROVIDERS.register("witch_leveling", () -> (factionPlayer, tree) ->
                 tree.unwrapKey().filter(WITCH_TREE::equals).isPresent()
                         && WitchFactions.WITCH.match(factionPlayer.getFaction())
-                        ? Math.max(0, factionPlayer.getLevel()) * 2 : 0);
+                        ? pointsForLevel(factionPlayer.getLevel()) : 0);
+    }
+
+    private static int pointsForLevel(int level) {
+        // Level 1: 0. Level 2/3/4: +1 each. Level 5+: +2 each.
+        if (level <= 1) return 0;
+        if (level <= 4) return level - 1;
+        return 3 + (level - 4) * 2;
     }
 
     public static void register(IEventBus modBus) {

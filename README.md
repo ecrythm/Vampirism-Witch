@@ -1,24 +1,25 @@
-# Vampirism: Witch v0.5.0
+# Vampirism: Witch 0.5.1
 
-NeoForge / Minecraft 26.1.2, Vampirism and FactionAPI.
+Minecraft 26.1.2 / NeoForge / Vampirism / FactionAPI
 
-## New skill: Potion Resistance
-- Unlock after Becoming a Witch.
-- Costs **1 skill point**.
-- When enabled, removes harmful status effects from the Witch automatically (about every two game ticks).
-- Does not remove beneficial or neutral effects. All harmful effects are checked by their Minecraft effect category.
-- Turning off the skill stops the protection.
+## Potion Resistance
+The unlockable Potion Resistance skill costs one point. Active skills now:
+- Reject harmful status effects before they're applied, retaining positive and neutral effects.
+- Stop direct instant-damage splash potion damage through a narrow potion-projectile damage check.
+- Keep the existing periodic cleanup for negative effects applied by nonstandard paths.
 
-## Skill points
-- A Witch has **2 skill points per faction level**, including the first one.
-- Level 1: 2 total points; level 7: 14; level 14: 28. Unlock costs are subtracted from this total.
-- The skill-point provider applies exclusively to the Witch faction level skill tree and does not change Vampires or Hunters.
+## Witch skill points
+- Level 1: 0 total points.
+- Level 2: 1; Level 3: 2; Level 4: 3.
+- Level 5: 5; from then on +2 per level (Level 14: 23).
+- Uses the custom Witch skill-point tag so the skill screen correctly deducts purchased skill costs.
+- Other factions' skill point rules are unaffected.
 
 ## Test
-1. Become a Witch, level 1.
-2. Open the Witch skills screen and purchase Potion Resistance for one point.
-3. Try harmful potion status effects such as Poison or Weakness; they should disappear automatically.
-4. Beneficial effects such as Speed and Regeneration should remain.
-5. Raise faction level; your available skill points should increase by two per level.
+1. Get level 1: expect 0 available points.
+2. Get level 2: expect 1 point.
+3. Buy Potion Resistance: expect 0 remaining.
+4. Test negative effects (Poison, Weakness), positive effects (Speed) and a Splash Potion of Harming.
+5. Gain levels 3, 4, 5: expect 1, 2 and 4 available points after buying Potion Resistance.
 
-Download JAR in GitHub Actions, artifact Vampirism-Witch-0.5.0.
+Get the JAR from the latest successful Actions artifact Vampirism-Witch-0.5.1.
