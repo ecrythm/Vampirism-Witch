@@ -38,7 +38,7 @@ public class VampirismWitch {
                             .lightLevel(state -> state.getValue(WitchCauldronBlock.LIT) ? 12 : 0));
 
     public static final DeferredItem<BlockItem> WITCH_CAULDRON_ITEM =
-            ITEMS.register("witch_cauldron", () -> new WitchCauldronItem(WITCH_CAULDRON.get(), new Item.Properties()));
+            ITEMS.registerItem("witch_cauldron", properties -> new WitchCauldronItem(WITCH_CAULDRON.get(), properties));
     public static final DeferredItem<Item> WITCH_HAT =
             ITEMS.registerSimpleItem("witch_hat", properties -> properties);
 
@@ -60,6 +60,6 @@ public class VampirismWitch {
         WitchSkills.register(modBus);
         modBus.addListener(PlayerEventHandlerEvent.class,
                 event -> event.addAttachmentListener(WitchAttachments.WITCH_PLAYER));
-        LOGGER.info("Vampirism: Witch 0.4.3 initialized");
+        LOGGER.info("Vampirism: Witch 0.4.4 initialized");
     }
 }
