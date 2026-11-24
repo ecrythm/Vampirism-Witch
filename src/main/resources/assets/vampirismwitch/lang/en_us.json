@@ -23,5 +23,7 @@
   "tooltip.vampirismwitch.witch": "Witch",
   "tooltip.vampirismwitch.required_level": "Required Level: 1",
   "skill.vampirismwitch.potion_resistance": "Potion Resistance",
-  "skill.vampirismwitch.potion_resistance.desc": "Automatically removes harmful potion effects while keeping beneficial effects."
+  "skill.vampirismwitch.potion_resistance.desc": "Automatically removes harmful potion effects while keeping beneficial effects.",
+  "gui.vampirismwitch.skills.skill_points.witch": "%s skill points",
+  "gui.vampirismwitch.skills.skill_points.witch.single": "%s skill point"
 }

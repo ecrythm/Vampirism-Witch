@@ -23,5 +23,7 @@
   "tooltip.vampirismwitch.witch": "Ведьма",
   "tooltip.vampirismwitch.required_level": "Необходимый уровень: 1",
   "skill.vampirismwitch.potion_resistance": "Сопротивление зельям",
-  "skill.vampirismwitch.potion_resistance.desc": "Автоматически снимает отрицательные эффекты зелий, сохраняя положительные."
+  "skill.vampirismwitch.potion_resistance.desc": "Автоматически снимает отрицательные эффекты зелий, сохраняя положительные.",
+  "gui.vampirismwitch.skills.skill_points.witch": "Очки навыков: %s",
+  "gui.vampirismwitch.skills.skill_points.witch.single": "Очки навыков: %s"
 }
